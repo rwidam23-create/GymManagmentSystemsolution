@@ -1,0 +1,41 @@
+﻿@model int
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h2>@Model</h2>
+
+@{
+    string pageTitle="Route Academy";
+    int age=25;
+    List<int> numbers = new List<int>() { 1, 2, 3, 4, 5 };
+}
+<html> 
+    <head> 
+        <title> @pageTitle</title>
+        </head>
+        <body>
+            <h1> Welcome to Route   </h1>
+            <h2>@pageTitle</h2>
+            <h2> @age   </h2>
+            <p>@age+1</p>
+            <p>@(age+1)</p>
+            @if(age>=18)
+        {
+            <p>Adult</p>
+        }
+
+        else
+        {
+            <p>UnderAge </p>
+        }
+        <ul>
+            @foreach(int n in numbers)
+            {
+                <li>numbers:@n</li>
+            }
+        </ul>
+        <a asp-controller="Home" asp-action="index">Test Link</a>
+    <a asp-controller="Test" asp-action="Rowida" asp-route-id="5">Test Link</a>
+    <!--Html comment=>Render Browser-->
+    @*This is Razor comment hide from Browser*@
+    </body>
+
+    </html>
